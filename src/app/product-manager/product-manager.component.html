@@ -1,0 +1,46 @@
+<h2>Manager Product</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+            <tr *ngFor="let product of products">
+              <td>{{product.id}}</td>
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>
+              <button class="btn btn-primary" (click)="showDetail(product)">Chi tiết</button>
+              <button class="btn btn-primary" (click)="removeItem(product.id)">Xóa</button></td>
+            </tr>
+          </thead>
+        </table>
+
+        <div *ngIf="selected">
+          <h2>
+            Information 
+            
+            <button type="button" (click)="closeDetail()" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          </h2>
+          
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>{{selected.id}}</td>
+              <td>{{selected.name}}</td>
+              <td>{{selected.price}}</td>
+              <td>{{selected.desc}}</td>
+            </tr>
+          </thead>
+        </table>
+        </div>
