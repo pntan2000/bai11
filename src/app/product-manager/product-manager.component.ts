@@ -17,6 +17,7 @@ export class ProductManagerComponent implements OnInit {
 products = data;
 selected: Product;
 showDetail(product){
+  console.log(product);
   this.selected = product;
 }
 removeItem(id){
