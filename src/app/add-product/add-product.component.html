@@ -3,7 +3,6 @@
     <label for="exampleInputEmail1">ID</label>
     <input type="text" class="form-control" name="id" [(ngModel)]="product.id">
   </div>
-  {{product.id}}
   <div class="form-group">
     <label for="exampleInputPassword1">Product Name</label>
     <input type="text" class="form-control" name="name" [(ngModel)]="product.name">
@@ -16,5 +15,5 @@
     <label for="exampleInputPassword1">Desc</label>
     <input type="text" class="form-control" name="desc" [(ngModel)]="product.desc">
   </div>
-  <button type="submit" class="btn btn-primary" (click)="addProduct()">Add</button>
+  <button type="submit" class="btn btn-primary" routerLink="/product-manager" (click)="addProduct()">Add</button>
 </form>
