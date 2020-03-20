@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {data} from "../Data";
 import {Product} from "../Product";
+import { ProductService } from "../product.service";
 
 @Component({
   selector: 'app-product-manager',
@@ -8,23 +8,25 @@ import {Product} from "../Product";
   styleUrls: ['./product-manager.component.css']
 })
 export class ProductManagerComponent implements OnInit {
+  products:Product[];
+  constructor(
+     private productService:ProductService
+  ) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit():void {
+    this.products = this.productService.getProducts();
   }
 
-products = data;
 selected: Product;
 showDetail(product){
   console.log(product);
   this.selected = product;
 }
 removeItem(id){
+  this.products = this.productService.removeProduct(id);
   if(id == this.selected.id){
     this.closeDetail();
   }
-return this.products = this.products.filter(product => product.id != id)
 }
 
 closeDetail(){

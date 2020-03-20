@@ -30,12 +30,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" routerLink="/home">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" routerLink="/about">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Services</a>
@@ -61,11 +61,14 @@
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-        <app-product-manager></app-product-manager>
+        <router-outlet></router-outlet>
+        <!-- <app-product-manager></app-product-manager>
+
+        <app-add-product></app-add-product>
 
         <app-slide></app-slide>
 
-        <app-product-list></app-product-list>
+        <app-product-list></app-product-list> -->
 
         <!-- /.row -->
 
