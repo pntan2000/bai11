@@ -1,23 +1,22 @@
-<h2>Manager Product</h2>
+<h2 class="d-flex mb-3 pt-5 justify-content-between">
+  Manager Product
+  <button class="btn btn-primary" routerLink="/product/add">Thêm Sản Phẩm</button>
+</h2>
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>ID</th>
+              <th>#</th>
               <th>Product Name</th>
               <th>Price</th>
               <th>Action</th>
             </tr>
-            <tr *ngFor="let product of products">
-              <td>{{product.id}}</td>
+            <tr *ngFor="let product of products; index as i">
+              <td>{{i}}</td>
               <td>{{product.name}}</td>
               <td>{{product.price}}</td>
-              <td>
-              <button class="btn btn-primary" (click)="showDetail(product)">Chi tiết</button>
+              <td width="200">
+              <button class="btn btn-primary" routerLink="/product/detail/{{product.id}}">Chi tiết</button>
               <button class="btn btn-primary" (click)="removeItem(product.id)">Xóa</button></td>
             </tr>
           </thead>
-        </table>
-        <button class="btn btn-primary" routerLink="/add-product">Thêm Sản Phẩm</button><br/>
-      <div *ngIf="selected">
-        <app-product-detail [data]="selected"></app-product-detail>
-      </div>
+        </table><br/>

@@ -1,10 +1,7 @@
-<div *ngIf="data">
+
           <h2>
             Information 
             
-            <button type="button" (click)="closeDetail()" class="close" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
           </h2>
           
         <table class="table table-bordered">
@@ -16,11 +13,10 @@
               <th>Description</th>
             </tr>
             <tr>
-              <td>{{data.id}}</td>
-              <td>{{data.name}}</td>
-              <td>{{data.price}}</td>
-              <td>{{data.desc}}</td>
+              <td>{{product.id}}</td>
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.desc}}</td>
             </tr>
           </thead>
         </table>
-      </div>

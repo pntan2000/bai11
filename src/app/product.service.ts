@@ -9,7 +9,9 @@ export class ProductService {
   getProducts(){
     return this.products;
   }
-
+  getProductDetail(id){
+    return this.products.find(product => product.id == id)
+  }
   removeProduct(id){
     return this.products = this.products.filter(product => product.id != id);
   }
