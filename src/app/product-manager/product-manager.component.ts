@@ -14,7 +14,7 @@ export class ProductManagerComponent implements OnInit {
   ) { }
 
   ngOnInit():void {
-    this.products = this.productService.getProducts();
+    this.getProducts();
   }
 
 selected: Product;
@@ -22,6 +22,10 @@ showDetail(product){
   console.log(product);
   this.selected = product;
 }
+getProducts(){
+    this.productService.getProducts().subscribe(response => this.products = response, error => console.log(error));
+}
+
 removeItem(id){
   this.products = this.productService.removeProduct(id);
   if(id == this.selected.id){
@@ -29,8 +33,5 @@ removeItem(id){
   }
 }
 
-closeDetail(){
-  return this.selected = null
-}
 
 }

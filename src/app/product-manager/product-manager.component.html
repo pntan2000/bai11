@@ -13,7 +13,7 @@
             <tr *ngFor="let product of products; index as i">
               <td>{{i}}</td>
               <td>{{product.name}}</td>
-              <td>{{product.price}}</td>
+              <td>${{product.price}}</td>
               <td width="200">
               <button class="btn btn-primary" routerLink="/product/detail/{{product.id}}">Chi tiết</button>
               <button class="btn btn-primary" (click)="removeItem(product.id)">Xóa</button></td>
