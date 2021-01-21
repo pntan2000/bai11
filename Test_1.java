@@ -53,7 +53,7 @@ public class Test_1 {
             }
         }
         int min = arr[2]-arr[1];
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 1; i < arr.length-1; i++) {
             if (min > (arr[i] - arr[i-1])) {
                 min = (arr[i+1] - arr[i]);
             }
