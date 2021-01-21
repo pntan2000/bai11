@@ -31,20 +31,20 @@ public class Test_1 {
     }
 
     public static void test_2(int[] arr) {
-        for (int j = 0; j < arr.length; j++) {
-            for (int i = 1; i < arr.length-1; i++) {
-                if (arr[i] > arr[j]) {
-                    int a = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = a;
-                }
+        for (int i = 0; i < arr.length; i++) {
+        for (int j = i+1; j < arr.length - 1; j++) {
+            if (arr[i] > arr[j]) {
+                int a = arr[i];
+                arr[i] = arr[j];
+                arr[j] = a;
+            }
             }
         }
-        System.out.println("Test 2: " + (arr[0] + arr[arr.length-2]));
+        System.out.println("Test 2: " + (arr[arr.length-1] + arr[arr.length-2]));
     }
     public static void test_3(int[] arr) {
-        for (int j = 0; j < arr.length; j++) {
-            for (int i = 1; i < arr.length-1; i++) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length - 1; j++) {
                 if (arr[i] > arr[j]) {
                     int a = arr[i];
                     arr[i] = arr[j];
